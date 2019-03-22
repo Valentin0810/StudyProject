@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>a1252d0f-b7a7-45b2-b0cd-5cdb50004f04.SCHEMA:simple_blog.simple_blog</OriginalElement>
+  <nodes>
+    <node x="249.875" y="446.0">a1252d0f-b7a7-45b2-b0cd-5cdb50004f04.TABLE:simple_blog.simple_blog.comment</node>
+    <node x="210.37500000000003" y="0.0">a1252d0f-b7a7-45b2-b0cd-5cdb50004f04.TABLE:simple_blog.simple_blog.user</node>
+    <node x="69.50000000000003" y="479.5">a1252d0f-b7a7-45b2-b0cd-5cdb50004f04.TABLE:simple_blog.simple_blog.tag_article</node>
+    <node x="0.0" y="267.0">a1252d0f-b7a7-45b2-b0cd-5cdb50004f04.TABLE:simple_blog.simple_blog.tag</node>
+    <node x="166.0" y="212.0">a1252d0f-b7a7-45b2-b0cd-5cdb50004f04.TABLE:simple_blog.simple_blog.article</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="a1252d0f-b7a7-45b2-b0cd-5cdb50004f04.TABLE:simple_blog.simple_blog.comment" target="a1252d0f-b7a7-45b2-b0cd-5cdb50004f04.TABLE:simple_blog.simple_blog.user">
+      <point x="34.5" y="-70.0" />
+      <point x="353.375" y="421.0" />
+      <point x="342.625" y="421.0" />
+      <point x="342.625" y="187.0" />
+      <point x="345.375" y="187.0" />
+      <point x="45.0" y="81.0" />
+    </edge>
+    <edge source="a1252d0f-b7a7-45b2-b0cd-5cdb50004f04.TABLE:simple_blog.simple_blog.article" target="a1252d0f-b7a7-45b2-b0cd-5cdb50004f04.TABLE:simple_blog.simple_blog.user">
+      <point x="0.0" y="-92.0" />
+      <point x="240.0" y="187.0" />
+      <point x="255.37500000000003" y="187.0" />
+      <point x="-45.0" y="81.0" />
+    </edge>
+    <edge source="a1252d0f-b7a7-45b2-b0cd-5cdb50004f04.TABLE:simple_blog.simple_blog.comment" target="a1252d0f-b7a7-45b2-b0cd-5cdb50004f04.TABLE:simple_blog.simple_blog.article">
+      <point x="-34.5" y="-70.0" />
+      <point x="284.375" y="421.0" />
+      <point x="277.0" y="421.0" />
+      <point x="37.0" y="92.0" />
+    </edge>
+    <edge source="a1252d0f-b7a7-45b2-b0cd-5cdb50004f04.TABLE:simple_blog.simple_blog.tag_article" target="a1252d0f-b7a7-45b2-b0cd-5cdb50004f04.TABLE:simple_blog.simple_blog.tag">
+      <point x="-34.25" y="-36.5" />
+      <point x="103.75000000000003" y="421.0" />
+      <point x="73.0" y="421.0" />
+      <point x="0.0" y="37.0" />
+    </edge>
+    <edge source="a1252d0f-b7a7-45b2-b0cd-5cdb50004f04.TABLE:simple_blog.simple_blog.tag_article" target="a1252d0f-b7a7-45b2-b0cd-5cdb50004f04.TABLE:simple_blog.simple_blog.article">
+      <point x="34.25" y="-36.5" />
+      <point x="172.25000000000003" y="421.0" />
+      <point x="203.0" y="421.0" />
+      <point x="-37.0" y="92.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="379.55555555555554" y="262.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Key columns</Category>
+    <Category>Columns</Category>
+  </Categories>
+</Diagram>
+
