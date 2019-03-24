@@ -1,15 +1,51 @@
 package com.varvashevich.entity;
 
-import com.varvashevich.entity.enumonly.Role;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
-public class User {
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@ToString
+@Entity
+@Table(name = "user", schema = "simple_blog")
+public class User implements BaseEntity<Long> {
 
-    Integer id;
-    String firstName;
-    String lastName;
-    Role role;
-    String password;
-    String email;
-    LocalDateTime createdAt;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "first_name")
+    private String firstName;
+
+    @Column(name = "last_name")
+    private String lastName;
+
+    @Column(name = "password")
+    private String password;
+
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private Set<Comment> comments = new HashSet<>();
 }
