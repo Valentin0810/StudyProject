@@ -1,5 +1,6 @@
 package com.varvashevich.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.varvashevich.entity.enumonly.Status;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -30,7 +31,8 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@ToString(exclude = "author")
+@EqualsAndHashCode(of = "id")
+@ToString(exclude = "authorId")
 @Entity
 @Table(name = "article", schema = "simple_blog")
 public class Article implements BaseEntity<Long> {
@@ -51,7 +53,7 @@ public class Article implements BaseEntity<Long> {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private User author;
+    private User authorId;
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;
@@ -60,6 +62,7 @@ public class Article implements BaseEntity<Long> {
     private LocalDateTime updatedAt;
 
     @ManyToMany
+    @JsonIgnore
     @JoinTable(name = "tag_article", schema = "simple_blog",
             joinColumns = @JoinColumn(name = "article_id"),
             inverseJoinColumns = @JoinColumn(name = "tag_id"))

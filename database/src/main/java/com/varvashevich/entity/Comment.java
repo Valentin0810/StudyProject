@@ -3,6 +3,7 @@ package com.varvashevich.entity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
@@ -21,6 +22,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Data
 @ToString(exclude = {"article", "user"})
+@EqualsAndHashCode(of = "id")
 @Entity
 @Table(name = "comment", schema = "simple_blog")
 public class Comment implements BaseEntity<Long> {

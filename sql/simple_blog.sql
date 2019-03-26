@@ -37,3 +37,14 @@ CREATE TABLE simple_blog.tag_article (
   tag_id     BIGSERIAL REFERENCES simple_blog.tag (id),
   article_id BIGSERIAL REFERENCES simple_blog.article (id)
 );
+
+INSERT INTO simple_blog.user (first_name, last_name, password, email, created_at) VALUES
+  ('Ivanov', 'Ivan', '1111', 'ivanov@gmail.com', '2019-05-01'),
+  ('Petrov', 'Petr', '2222', 'petrov@gmail.com', '2019-06-01'),
+  ('Sidorov', 'Fedor', '3333', 'sidorov@gmail.com', '2019-07-01');
+
+INSERT INTO simple_blog.tag (name) VALUES
+  ('courses'),
+  ('leverX'),
+  ('students');
+

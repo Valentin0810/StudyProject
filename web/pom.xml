@@ -12,6 +12,10 @@
     <artifactId>web</artifactId>
     <packaging>war</packaging>
 
+    <properties>
+        <jackson.version>2.9.5</jackson.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>leverx</groupId>
