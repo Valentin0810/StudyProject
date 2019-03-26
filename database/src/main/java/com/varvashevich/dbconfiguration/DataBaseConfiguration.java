@@ -1,4 +1,4 @@
-package com.varvashevich.configuration;
+package com.varvashevich.dbconfiguration;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -19,7 +19,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 @Configuration
-@ComponentScan("com.varvashevich")
+@ComponentScan("com.varvashevich.configuration")
 @PropertySource({"classpath:database.properties", "classpath:hibernate.properties"})
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = "com.varvashevich.repository")

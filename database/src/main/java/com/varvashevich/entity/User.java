@@ -1,8 +1,10 @@
 package com.varvashevich.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
@@ -23,6 +25,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Data
 @ToString
+@EqualsAndHashCode(of = "id")
 @Entity
 @Table(name = "user", schema = "simple_blog")
 public class User implements BaseEntity<Long> {
@@ -46,6 +49,7 @@ public class User implements BaseEntity<Long> {
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private Set<Comment> comments = new HashSet<>();
 }

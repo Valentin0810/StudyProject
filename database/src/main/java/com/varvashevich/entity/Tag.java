@@ -1,5 +1,6 @@
 package com.varvashevich.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -24,7 +25,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Data
 @ToString(exclude = "articles")
-
+@EqualsAndHashCode(of = "id")
 @Entity
 @Table(name = "tag", schema = "simple_blog")
 public class Tag implements BaseEntity<Long> {
@@ -37,6 +38,7 @@ public class Tag implements BaseEntity<Long> {
     private String name;
 
     @ManyToMany
+    @JsonIgnore
     @JoinTable(name = "tag_article", schema = "simple_blog",
             joinColumns = @JoinColumn(name = "tag_id"),
             inverseJoinColumns = @JoinColumn(name = "article_id"))
